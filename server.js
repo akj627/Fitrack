@@ -39,7 +39,8 @@ app.get('/oauth_callback', function (req, res) {
     , oauthSettings = req.session.oauth
     , client = new Fitbit(config.CONSUMER_KEY, config.CONSUMER_SECRET);
 
-  console.log('created verifier');
+    console.log('created verifier');
+
 
     // Request an access token
   client.getAccessToken(
@@ -80,6 +81,7 @@ app.get('/stats', function (req, res) {
       // Take action
       return;
     }
+
 
     // `activities` is a Resource model
     res.send('Total steps today: ' + JSON.stringify(activities));
